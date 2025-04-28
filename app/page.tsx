@@ -5,6 +5,7 @@ import Link from "next/link";
 import ParallaxHero from "./components/ParallaxHero";
 import FoodCarousel from "./components/FoodCarousel";
 import ScrollBanner from "./components/ScrollBanner";
+import FeatureSection from "./components/FeatureSection";
 
 export default function Home() {
   return (
@@ -16,30 +17,7 @@ export default function Home() {
       <ScrollBanner />
 
       {/* Featured Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[500px] rounded-lg overflow-hidden">
-              <Image
-                src="/featured-dish.jpg"
-                alt="Signature dish"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-4xl font-serif">Our Signature Experience</h2>
-              <p className="text-lg text-gray-600">
-                Indulge in a culinary journey that combines traditional flavors with modern innovation. Our chefs craft each dish with precision and passion, using only the finest ingredients.
-              </p>
-              <Link href="/menu" className="inline-block btn-primary">
-                Explore Menu
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FeatureSection />
 
       {/* Special Offers */}
       <section className="py-20 px-4 bg-gray-50">

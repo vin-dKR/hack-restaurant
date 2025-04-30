@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import ParallaxText from './ParallaxText';
+import Button from './ui/Button';
 
 export default function ParallaxHero() {
+  const [isMobile, setIsMobile] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const [rotationCount, setRotationCount] = useState(0);
 
@@ -20,61 +22,78 @@ export default function ParallaxHero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-[95vh] md:h-[100vh] overflow-hidden bg-white">
       {/* Image Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolutez inset-0 z-0 rounded rounded-lg">
         <Image 
-          src="/hero/hero3.jpg" 
+          src={isMobile ? "/hero/mobhero.jpg" : "/hero/hero3.jpg"} 
           alt="Hero Background"
 
           quality={100}
           priority
           sizes="100vw"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center py-4 xl:py-8 px-4 xl:px-12 rounded-[45px] md:rounded-[90px] p-2"
+          style={{
+            objectFit: 'cover'
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent to-20%" />
       </div>
+      
 
       {/* Parallax Content */}
       <div
         ref={heroRef}
-        className="relative z-10 h-full flex items-center justify-center text-center px-4"
+        className="relative z-10 h-full flex items-center justify-center text-center px-4 mt-5 lg:mt-20"
       >
-        <div className="max-w-4xl mb-90 xl:mb-0 xl:mx-auto">
-          <div className='xl:mb-50'>
-          <div className="mb-6">
-            <div className="text-6xl xl:text-7xl font-bold tracking-tight font-heading">
-              <div className='flex flex-row gap-2 items-baseline justify-center'>
-                <ParallaxText text="A" speed={0.3} className="font-heading text-shadow-xs" />
+        <div className="max-w-4xl">
+          <div className='mb-60 xl:mb-50'>
+          <div className="mb-2">
+            <div className="text-5xl xl:text-7xl font-bold tracking-tight font-heading">
                 <ParallaxText 
-                  text="taste" 
+                  text="Fuel Your Hunger" 
                   speed={0.3} 
-                  className="text-5xl xl:text-7xl font-bold font-angelos mx-5 text-shadow-xs" 
-                  style={{ fontFamily: 'Angelos, sans-serif' }}
+                  className="text-shadow-xs" 
+                  style={{
+                    fontFamily: 'Questrial',
+                    // fontSize: "80px"
+                  }}
                 />
-                <ParallaxText text="of" speed={0.3} className="font-merriweather text-shadow-xs" />
-              </div>
-              <ParallaxText text="Artistry" speed={0.5} className="font-raleway text-shadow-xs" />
             </div>
           </div>
           
-          <div className="mb-8 text-md md:text-xl font-light tracking-wide font-sans text-shadow-md">
-            <ParallaxText text="Where Flavor Meets Passion" speed={0.4} />
+          <div className="mb-8 text-lg md:text-3xl font-light tracking-wide font-sans text-shadow-md">
+            <ParallaxText 
+              text="eat like a legend" 
+              speed={0.4} 
+              className="text-lg bg-gradient-to-b from-orange-700 to-yellow-300 md:from-[#244021] md:from-40% md:to-[#83A580] bg-clip-text text-transparent text-shadow-md text-shadow-black"
+              style={{
+                fontFamily: 'SeoulNamsanCondensed-Black',
+                fontSize: "30px",
+                textShadow: '1px 1px 1px rgba(234, 234, 234, 0.15)'
+              }}
+            />
           </div>
           </div>
 
-          <div className="relative flex items-center justify-center">
-            <div className='absolute top-0 md:top-6 flex flex-col md:flex-row md:gap-4 gap-3 justify-center'>
-              <button className="bg-green-950 rounded-full border-4 border-white/40 md:w-[250px] group relative overflow-hidden py-2">
-                <span className="relative z-10 text-sm md:text-base">Reserve a Table</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </button>
-              <button className="border-4 border-white/90 rounded-full py-2 md:py-3 w-[160px] md:w-[200px] group relative overflow-hidden">
-                <span className="relative z-10 text-sm md:text-base">Order Now</span>
-                <div className="absolute inset-0 bg-green-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </button>
+          <div className="relative flex justify-end md:items-center md:justify-center">
+            <div className='absolute top-0 md:top-6 flex flex-col md:flex-row md:gap-4 gap-3 justify-end md:justify-center lg:justify-center'>
+              <Button variant="green" size="lg">
+                Reserve a Table
+              </Button>
+              <Button variant="white" size="lg">
+                Order Now
+              </Button>
             </div>
           </div>
         </div>

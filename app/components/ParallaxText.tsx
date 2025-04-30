@@ -43,7 +43,7 @@ export default function ParallaxText({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [speed]);
 
-  const baseTextClass = "relative z-20 text-white font-bold transition-transform duration-200 text-shadow-black";
+  const baseTextClass = "relative z-20 text-white font-bold transition-transform duration-200 text-shadow-black text-shadow-md";
   const italicClass = italic ? "italic" : "";
 
   return (

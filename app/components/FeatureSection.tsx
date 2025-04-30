@@ -14,11 +14,43 @@ export default function FeatureSection() {
       </div>
 
       {/* Decorative Food Illustrations */}
-      <div className="absolute -top-10 lg:top-0 -left-4 w-120 h-70">
-        <Image src="/imgs/leaf2.png" alt="Decorative leaf" fill className="object-contain" />
+      <div 
+        className="absolute -top-10 lg:top-0 -left-4 w-120 h-70 select-none"
+        onDragStart={(e) => e.preventDefault()}
+        onMouseDown={(e) => e.preventDefault()}
+      >
+        <div className="relative w-full h-full">
+          <Image 
+            src="/imgs/leaf2.png" 
+            alt="Decorative leaf" 
+            fill 
+            className="object-contain pointer-events-none"
+            unoptimized
+            onContextMenu={(e) => e.preventDefault()}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            draggable="false"
+          />
+        </div>
       </div>
-      <div className="absolute -bottom-40 lg:-bottom-20 -right-5 w-102 h-102 -rotate-90">
-        <Image src="/imgs/leaf4.png" alt="Decorative herb" fill className="object-contain" />
+      <div 
+        className="absolute -bottom-40 lg:-bottom-20 -right-5 w-102 h-102 -rotate-90 select-none"
+        onDragStart={(e) => e.preventDefault()}
+        onMouseDown={(e) => e.preventDefault()}
+      >
+        <div className="relative w-full h-full">
+          <Image 
+            src="/imgs/leaf4.png" 
+            alt="Decorative herb" 
+            fill 
+            className="object-contain pointer-events-none"
+            unoptimized
+            onContextMenu={(e) => e.preventDefault()}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            draggable="false"
+          />
+        </div>
       </div>
 
       {/* Main Content */}

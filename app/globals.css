@@ -4,7 +4,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'SeoulNamsanCondensed-ExtraBold', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -124,6 +124,43 @@ body {
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeoulNamsanCondensed-Black';
+  src: url('/fonts/SeoulNamsanCondensed-Black.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeoulNamsanCondensed-ExtraBold';
+  src: url('/fonts/SeoulNamsanCondensed-ExtraBold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Questrial';
+  src: url('/fonts/Questrial-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Prevent image dragging and selection */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 

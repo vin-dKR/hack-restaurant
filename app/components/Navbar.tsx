@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const navigationItems = [
   { name: 'Menu', href: '/menu' },
@@ -41,7 +42,7 @@ export default function Navbar() {
   return (
     <>
       <motion.nav 
-        className="fixed left-1/2 -translate-x-1/2 z-50 rounded-xl mt-8"
+        className="fixed left-1/2 -translate-x-1/2 z-50 rounded-xl mt-10 md:mt-15"
         style={{ 
           height,
           width,
@@ -56,7 +57,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="text-xl md:text-2xl font-serif text-white">
-                Taste Magic
+                <Image src="/imgs/logo.png" alt="Logo" width={40} height={40} />
               </Link>
             </div>
 
@@ -84,7 +85,7 @@ export default function Navbar() {
                 className="relative bg-green-900/80 text-white px-4 md:px-6 py-2 md:py-3 rounded-xl hover:bg-green-700 transition-all duration-300 group overflow-hidden backdrop-blur-sm border-4 border-white/20 hover:border-white/30"
               >
                 <span className="relative z-10 font-medium">Order Now</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-green-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-green-700 transform rounded-xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 <div className="absolute -inset-1 bg-white/10 backdrop-blur-sm rounded-xl -z-10"></div>
               </Link>
             </div>

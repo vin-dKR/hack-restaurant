@@ -50,3 +50,37 @@ export const foodItems: FoodItem[] = [
     description: "Creamy vanilla milkshake"
   }
 ]; 
+
+
+export const hotNow = [
+  {
+    id: 1,
+    name: 'Fresh Pasta',
+    image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=120&h=120&fit=crop',
+    alt: 'Pasta'
+  },
+  {
+    id: 2,
+    name: 'Wood-fired Pizza',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=120&h=120&fit=crop',
+    alt: 'Pizza'
+  },
+  {
+    id: 3,
+    name: 'Prime Steak',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=120&h=120&fit=crop',
+    alt: 'Steak'
+  },
+  {
+    id: 4,
+    name: 'Garden Salad',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=120&h=120&fit=crop',
+    alt: 'Salad'
+  },
+  {
+    id: 5,
+    name: 'Sweet Desserts',
+    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=120&h=120&fit=crop',
+    alt: 'Dessert'
+  }
+];

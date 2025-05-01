@@ -8,7 +8,7 @@ import Button from './ui/Button';
 
 export default function FeatureSection() {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+    <section className="relative py-20 md:py-32 overflow-hidden bg-white w-full">
       {/* Blurred Border Effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50">
         <div className="absolute -inset-4 bg-white/30 backdrop-blur-sm rounded-3xl border border-white/50 shadow-[0_0_20px_rgba(255,255,255,0.3)]"></div>

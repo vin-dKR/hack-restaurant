@@ -23,7 +23,7 @@ const BlureCard = ({ card }: { card: Card }) => {
 
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-white text-2xl font-bold">{card.title}</h1>
-          <h3 className="text-white text-sm">{card.description}</h3>
+          <h3 className="text-white/60 text-sm text-shadow-lg">{card.description}</h3>
           <div className="flex flex-col justify-center items-center mt-6">
             <p className="text-white text-xl text-center">{card.paragraph}</p>
           </div>

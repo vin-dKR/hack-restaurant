@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import ParallaxText from './ParallaxText';
+import ParallaxText from './ui/parallax-hero/ParallaxText';
 import Button from './ui/Button';
 
 export default function ParallaxHero() {

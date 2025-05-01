@@ -1,105 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import BlureCard from './ui/BlureCard';
-import Image from 'next/image';
 import Toast from './ui/Toast';
 import { useState } from 'react';
-
-const offers = [
-  {
-    title: "Happy Hour",
-    time: "4 PM - 6 PM Daily", 
-    description: "50% off on selected drinks and appetizers",
-    icon: (
-      <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    )
-  },
-  {
-    title: "Weekend Brunch",
-    time: "Saturday & Sunday",
-    description: "Complimentary mimosa with any brunch entrée",
-    icon: (
-      <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    )
-  },
-  {
-    title: "Private Events",
-    time: "Book Your Event",
-    description: "Special packages for groups of 10 or more",
-    icon: (
-      <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
-      </svg>
-    )
-  }
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 20
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 50,
-      damping: 10
-    }
-  }
-};
-
-const cardVariants = {
-  initial: {
-    scale: 1
-  },
-  hover: {
-    scale: 1.02,
-    transition: {
-      duration: 0.2
-    }
-  }
-};
-
-const cardsData = [
-  {
-    id: 1,
-    title: "Happy Hours",
-    description: "4 PM - 6 PM",
-    paragraph: "50% off on selected drinks and appetizers",
-    image: "/imgs/cards/card1.png",
-  },
-  {
-    id: 2,
-    title: "Weekend Brunch",
-    description: "Saturday & Sunday",
-    paragraph: "Complimentary mimosa with any brunch entrée",
-    image: "/imgs/cards/card2.png",
-  },
-  {
-    id: 3,
-    title: "Private Events",
-    description: "Book an event",
-    paragraph: "Special packages for groups of 10 or more",
-    image: "/imgs/cards/card3.png",
-  },
-]
+import { cardsData } from '@/data/offersData';
 
 export default function SpecialOffers() {
   const [showToast, setShowToast] = useState(false);
@@ -134,8 +38,8 @@ export default function SpecialOffers() {
   };
 
   return (
-    <div className='bg-white'>
-      <div className='relative bg-green-950 mx-4 lg:mx-10 p-10 rounded-xl'>
+    <div className='bg-gray-50'>
+      <div className='relative bg-green-950 mx-4 lg:mx-10 p-10 rounded-3xl'>
       <div 
           className="absolute inset-0 object-cover mix-blend-overlay opacity-50 bg-[url('/imgs/green-noise.png')]"
         />

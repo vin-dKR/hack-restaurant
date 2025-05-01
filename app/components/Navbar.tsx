@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Button from './ui/Button';
 
 const navigationItems = [
   { name: 'Menu', href: '/menu' },
@@ -115,10 +116,8 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed top-[100px] left-1/2 -translate-x-1/2 z-40 w-[85%] md:hidden"
           >
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-xl border border-white/70 p-4 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl border-6 border-white/20 p-4 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
-              <div className="absolute inset-0 rounded-xl shadow-[inset_0_0_20px_rgba(255,255,255,0.1)]"></div>
-              <div className="absolute -inset-1 rounded-xl bg-gradient-to-br from-white/30 to-transparent blur-sm opacity-30"></div>
               <div className="relative flex flex-col justify-center items-center space-y-4">
                 {navigationItems.map((item) => (
                   <Link
@@ -131,11 +130,12 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="/order"
-                  className="bg-green-900/80 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition-colors text-center border border-4 border-white/50 w-[60%] shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                  href="/reservations"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Order Now
+                  <Button variant="orange" size="lg">
+                    Book a Table
+                  </Button>
                 </Link>
               </div>
             </div>

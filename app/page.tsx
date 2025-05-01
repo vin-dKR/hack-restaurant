@@ -15,9 +15,7 @@ export default function Home() {
       <ParallaxHero />
 
       {/* Food Banner */}
-      <div className="">
-        <ScrollBanner />
-      </div>
+      <ScrollBanner />
 
       {/* Featured Section */}
       <FeatureSection />

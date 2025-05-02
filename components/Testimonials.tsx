@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TestimonialCard } from './ui/testimonials/TestimonialCard';
-import { ShowMoreButton } from './ui/testimonials/ShowMoreButton';
+import { TestimonialCard } from './sub-components/testimonials/TestimonialCard';
+import { ShowMoreButton } from './sub-components/testimonials/ShowMoreButton';
 import { testimonials } from '@/data/testimonials';
 
 export const Testimonials = () => {

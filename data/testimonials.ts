@@ -1,4 +1,4 @@
-import { Testimonial } from "@/app/components/ui/testimonials/types";
+import { Testimonial } from "@/components/sub-components/testimonials/types";
 
 export const testimonials: Testimonial[] = [
     {

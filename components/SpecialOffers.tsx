@@ -1,7 +1,7 @@
 'use client';
 
-import BlureCard from './ui/BlureCard';
-import Toast from './ui/Toast';
+import BlureCard from './sub-components/BlureCard';
+import Toast from './sub-components/Toast';
 import { useState } from 'react';
 import { cardsData } from '@/data/offersData';
 

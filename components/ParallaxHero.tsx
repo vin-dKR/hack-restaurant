@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import ParallaxText from './ui/parallax-hero/ParallaxText';
-import Button from './ui/Button';
+import ParallaxText from './sub-components/parallax-hero/ParallaxText';
+import Button from './sub-components/Button';
 
 export default function ParallaxHero() {
   const [isMobile, setIsMobile] = useState(false);

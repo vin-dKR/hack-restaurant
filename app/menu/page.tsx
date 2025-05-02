@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { menuItems } from '../data/menuData';
-import { FilterOptions, MenuItem } from '../types/menu';
-import MenuSection from '../components/MenuSection';
-import FilterBar from '../components/FilterBar';
+import { menuItems } from '../../data/menuData';
+import { FilterOptions, MenuItem } from '../../components/sub-components/menu/menu';
+import MenuSection from '../../components/sub-components/menu/MenuSection';
+import FilterBar from '../../components/sub-components/menu/FilterBar';
 
 export default function Menu() {
   const [filters, setFilters] = useState<FilterOptions>({

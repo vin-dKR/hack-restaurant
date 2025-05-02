@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MenuItem } from '../types/menu';
+import { MenuItem } from './menu';
 import MenuItemCard from './MenuItemCard';
 
 interface MenuSectionProps {

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import Button from './ui/Button';
+import Button from './sub-components/Button';
 
 const navigationItems = [
   { name: 'Menu', href: '/menu' },

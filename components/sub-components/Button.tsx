@@ -1,7 +1,9 @@
 import { ButtonHTMLAttributes } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  href?: string;
   variant?: 'green' | 'white' | 'black' | 'orange';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
@@ -27,32 +29,49 @@ const sizes = {
   lg: 'py-2 w-[220px] text-xl'
 };
 
+const buttonContent = (children: React.ReactNode, variant: 'green' | 'white' | 'black' | 'orange') => (
+  <>
+    <span className={cn("relative z-10 font-medium select-text", textVariants[variant])}>
+      {children}
+    </span>
+    <div className={cn(
+      "absolute inset-0 transform scale-x-0",
+      variant === 'green' && "bg-gradient-to-b from-green-700 to-green-900",
+      variant === 'white' && "bg-gradient-to-b from-green-800 to-green-950",
+      variant === 'black' && "bg-gradient-to-b from-gray-700 to-gray-900",
+      variant === 'orange' && "bg-gradient-to-b from-orange-500 to-yellow-600"
+    )} />
+  </>
+);
+
 export default function Button({ 
   children, 
   variant = 'green', 
   size = 'md',
+  href,
   className,
   ...props 
 }: ButtonProps) {
+  const buttonClasses = cn(
+    variants[variant],
+    sizes[size],
+    className
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={buttonClasses}>
+        {buttonContent(children, variant)}
+      </Link>
+    );
+  }
+
   return (
     <button 
-      className={cn(
-        variants[variant],
-        sizes[size],
-        className
-      )}
+      className={buttonClasses}
       {...props}
     >
-      <span className={cn("relative z-10 font-medium", textVariants[variant])}>
-        {children}
-      </span>
-      <div className={cn(
-        "absolute inset-0 transform scale-x-0",
-        variant === 'green' && "bg-gradient-to-b from-green-700 to-green-900",
-        variant === 'white' && "bg-gradient-to-b from-green-800 to-green-950",
-        variant === 'black' && "bg-gradient-to-b from-gray-700 to-gray-900",
-        variant === 'orange' && "bg-gradient-to-b from-orange-500 to-yellow-600"
-      )} />
+      {buttonContent(children, variant)}
     </button>
   );
 } 

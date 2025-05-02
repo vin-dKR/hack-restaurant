@@ -140,18 +140,12 @@ export default function FeatureSection() {
             </div>
 
             <div className='grid grid-cols-2 gap-6'>
-            <Link 
-              href="/reservations" 
-            >
-              <Button variant="green" size="lg" className='w-[200px]'>
+              <Button href="/reservations" variant="green" size="lg" className='w-[200px] text-center'>
                 Book a Table
               </Button>
-            </Link>
-            <Link href="/menu">
-              <Button variant="orange" size="lg" className='w-[200px]'>
+              <Button href="/menu" variant="orange" size="lg" className='w-[200px] text-center'>
                 Order Now
               </Button>
-            </Link>
             </div>
             
           </motion.div>

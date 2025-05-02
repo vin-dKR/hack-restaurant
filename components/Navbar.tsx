@@ -82,7 +82,7 @@ export default function Navbar() {
             {/* Order Now Button */}
             <div className="hidden md:block relative">
               <Link
-                href="/order"
+                href="/menu"
                 className="relative bg-green-900/80 text-white px-4 md:px-6 py-2 md:py-3 rounded-xl hover:bg-green-700 transition-all duration-300 group overflow-hidden backdrop-blur-sm border-4 border-white/20 hover:border-white/30"
               >
                 <span className="relative z-10 font-medium">Order Now</span>

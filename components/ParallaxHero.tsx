@@ -88,10 +88,10 @@ export default function ParallaxHero() {
 
           <div className="relative flex justify-end md:items-center md:justify-center">
             <div className='absolute top-0 md:top-6 flex flex-col md:flex-row md:gap-4 gap-3 justify-end md:justify-center lg:justify-center'>
-              <Button variant="green" size="lg">
+              <Button href="/reservations" variant="green" size="lg">
                 Reserve a Table
               </Button>
-              <Button variant="white" size="lg">
+              <Button href="/menu" variant="white" size="lg">
                 Order Now
               </Button>
             </div>

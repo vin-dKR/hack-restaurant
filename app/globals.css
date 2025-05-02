@@ -4,16 +4,6 @@
   font-family: 'SeoulNamsanCondensed-ExtraBold', sans-serif;
 }
 
-
-body {
-  /* color: rgb(var(--foreground-rgb)); */
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
-}
-
 @layer components {
   .glass-card {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg;

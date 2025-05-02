@@ -1,5 +1,4 @@
-import { FilterOptions } from '../types/menu';
-import { useState } from 'react';
+import { FilterOptions } from './menu';
 
 interface FilterBarProps {
   filters: FilterOptions;
@@ -21,8 +20,12 @@ export default function FilterBar({ filters, onFilterChange, isMobile = false, o
   const dietaryOptions = ['Vegetarian', 'Gluten Free'];
   const tags = ['Hot', 'Trending', 'Italian', 'Seafood', 'Premium'];
 
+  const handlePriceRangeChange = (range: [number, number]) => {
+    onFilterChange({ ...filters, priceRange: range });
+  };
+
   return (
-    <div className={`${isMobile ? 'fixed inset-0 bg-black/20 z-50 ' : ''}`}>
+    <div className={`${isMobile ? 'fixed inset-0 bg-black/20 z-50' : ''}`}>
       <div className={`bg-white/20 backdrop-blur-lg border-2 border-black/5 p-4 rounded-lg shadow-md ${
         isMobile ? 'fixed inset-0 overflow-y-auto' : 'mt-16'
       }`}>
@@ -42,7 +45,7 @@ export default function FilterBar({ filters, onFilterChange, isMobile = false, o
         
         {/* Price Range */}
         <div className="mb-4">
-        <h3 className="text-lg font-semibold hidden lg:block">Filters</h3>
+          <h3 className="text-lg font-semibold hidden lg:block">Filters</h3>
           <h4 className="font-medium mb-2">Price Range</h4>
           <div className="space-y-2">
             {priceRanges.map((range, index) => (
@@ -51,7 +54,7 @@ export default function FilterBar({ filters, onFilterChange, isMobile = false, o
                   type="radio"
                   name="priceRange"
                   checked={filters.priceRange[0] === range.range[0] && filters.priceRange[1] === range.range[1]}
-                  onChange={() => onFilterChange({ ...filters, priceRange: range.range as [number, number] })}
+                  onChange={() => handlePriceRangeChange(range.range as [number, number])}
                   className="mr-2"
                 />
                 {range.label}

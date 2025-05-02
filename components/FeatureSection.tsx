@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import WaveAnimation from './WaveAnimation';
 import Button from './sub-components/Button';

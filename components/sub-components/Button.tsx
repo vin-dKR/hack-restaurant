@@ -9,18 +9,33 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-const variants = {
-  green: 'bg-gradient-to-t from-green-900 to-green-950 rounded-2xl border-4 border-white/30 group relative overflow-hidden',
-  white: 'bg-gradient-to-b from-white to-white/20 rounded-2xl border-4 border-white/90 group relative overflow-hidden',
-  black: 'bg-gradient-to-t from-gray-800 to-black rounded-2xl border-4 border-white/50 group relative overflow-hidden',
-  orange: 'bg-gradient-to-t from-orange-600 to-yellow-500 rounded-2xl border-4 border-white/30 group relative overflow-hidden'
+const baseStyles = {
+  button: 'rounded-2xl border-4 group relative overflow-hidden',
+  text: 'relative z-10 font-medium select-text',
+  hover: 'absolute inset-0 transform scale-x-0'
 };
 
-const textVariants = {
-  green: 'bg-gradient-to-b from-green-100 to-white bg-clip-text text-transparent',
-  white: 'bg-gradient-to-b from-green-900 font-bold to-green-950 bg-clip-text text-transparent',
-  black: 'bg-gradient-to-b from-gray-100 to-white bg-clip-text text-transparent',
-  orange: 'bg-gradient-to-b from-yellow-100 to-white bg-clip-text text-transparent'
+const variants = {
+  green: {
+    button: 'bg-gradient-to-t from-green-900 to-green-950 border-white/30',
+    text: 'bg-gradient-to-b from-green-100 to-white bg-clip-text text-transparent',
+    hover: 'bg-gradient-to-b from-green-700 to-green-900'
+  },
+  white: {
+    button: 'bg-gradient-to-b from-white to-white/20 border-white/90',
+    text: 'bg-gradient-to-b from-green-900 font-bold to-green-950 bg-clip-text text-transparent',
+    hover: 'bg-gradient-to-b from-green-800 to-green-950'
+  },
+  black: {
+    button: 'bg-gradient-to-t from-gray-800 to-black border-white/50',
+    text: 'bg-gradient-to-b from-gray-100 to-white bg-clip-text text-transparent',
+    hover: 'bg-gradient-to-b from-gray-700 to-gray-900'
+  },
+  orange: {
+    button: 'bg-gradient-to-t from-orange-600 to-yellow-500 border-white/30',
+    text: 'bg-gradient-to-b from-yellow-100 to-white bg-clip-text text-transparent',
+    hover: 'bg-gradient-to-b from-orange-500 to-yellow-600'
+  }
 };
 
 const sizes = {
@@ -29,18 +44,12 @@ const sizes = {
   lg: 'py-2 w-[220px] text-xl'
 };
 
-const buttonContent = (children: React.ReactNode, variant: 'green' | 'white' | 'black' | 'orange') => (
+const ButtonContent = ({ children, variant }: { children: React.ReactNode; variant: keyof typeof variants }) => (
   <>
-    <span className={cn("relative z-10 font-medium select-text", textVariants[variant])}>
+    <span className={cn(baseStyles.text, variants[variant].text)}>
       {children}
     </span>
-    <div className={cn(
-      "absolute inset-0 transform scale-x-0",
-      variant === 'green' && "bg-gradient-to-b from-green-700 to-green-900",
-      variant === 'white' && "bg-gradient-to-b from-green-800 to-green-950",
-      variant === 'black' && "bg-gradient-to-b from-gray-700 to-gray-900",
-      variant === 'orange' && "bg-gradient-to-b from-orange-500 to-yellow-600"
-    )} />
+    <div className={cn(baseStyles.hover, variants[variant].hover)} />
   </>
 );
 
@@ -53,7 +62,8 @@ export default function Button({
   ...props 
 }: ButtonProps) {
   const buttonClasses = cn(
-    variants[variant],
+    baseStyles.button,
+    variants[variant].button,
     sizes[size],
     className
   );
@@ -61,7 +71,7 @@ export default function Button({
   if (href) {
     return (
       <Link href={href} className={buttonClasses}>
-        {buttonContent(children, variant)}
+        <ButtonContent variant={variant}>{children}</ButtonContent>
       </Link>
     );
   }
@@ -71,7 +81,7 @@ export default function Button({
       className={buttonClasses}
       {...props}
     >
-      {buttonContent(children, variant)}
+      <ButtonContent variant={variant}>{children}</ButtonContent>
     </button>
   );
 } 

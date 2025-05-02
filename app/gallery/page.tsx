@@ -50,10 +50,10 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <main className="min-h-screen pt-16">
+    <main className="min-h-screen pt-16 ">
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 -top-12 lg:-top-5 z-0 mx-4 lg:mx-10 rounded rounded-[30px] lg:rounded-[60px] overflow-hidden">
           <Image
             src="/gallery-hero.jpg"
             alt="Gallery showcase"
@@ -64,7 +64,7 @@ export default function Gallery() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-serif mb-4">Our Gallery</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Gallery</h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto">
             A visual journey through our culinary world
           </p>

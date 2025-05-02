@@ -85,10 +85,10 @@ export default function Reservations() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 pt-16">
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center">
-        <div className="absolute inset-0 top-4 lg:top-5 z-0 mx-4 lg:mx-10 rounded rounded-[30px] lg:rounded-[60px] overflow-hidden">
+        <div className="absolute inset-0 -top-12 lg:-top-5 z-0 mx-4 lg:mx-10 rounded rounded-[30px] lg:rounded-[60px] overflow-hidden">
           <Image
             src="/reservation-hero.jpg"
             alt="Restaurant interior"

@@ -8,7 +8,7 @@ import Button from './sub-components/Button';
 export default function ParallaxHero() {
   const [isMobile, setIsMobile] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
-  const [rotationCount, setRotationCount] = useState(0);
+  // const [rotationCount, setRotationCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {

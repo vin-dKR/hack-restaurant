@@ -5,12 +5,12 @@ import { Table, TableSelectionData } from './types';
 
 interface TableGridProps {
   tables: Table[];
-  selectedTable: string | null;
+  selectedTable?: string | null;
   onTableSelect: (tableId: string) => void;
-  selectionData: TableSelectionData;
+  selectionData?: TableSelectionData;
 }
 
-const TableGrid = ({ tables, selectedTable, onTableSelect, selectionData }: TableGridProps) => {
+const TableGrid = ({ tables, onTableSelect }: TableGridProps) => {
   const maxRow = Math.max(...tables.map(table => table.position.row));
   const maxCol = Math.max(...tables.map(table => table.position.col));
 

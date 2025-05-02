@@ -1,19 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    time: '',
-    guests: '2',
-    message: ''
-  });
 
+  {/*
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
@@ -27,6 +18,7 @@ export default function Contact() {
       [name]: value
     }));
   };
+  */}
 
   return (
     <main className="min-h-screen pt-16 bg-gray-50">

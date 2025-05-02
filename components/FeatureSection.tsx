@@ -75,7 +75,7 @@ export default function FeatureSection() {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-30" />
             <div className="absolute bottom-0 left-0 right-0 p-8 z-40">
-              <h3 className="text-3xl text-white mb-2">Chef's Special</h3>
+              <h3 className="text-3xl text-white mb-2">Chef&apos;s Special</h3>
               <p className="text-gray-200">Handcrafted with passion and precision</p>
             </div>
           </motion.div>

@@ -13,12 +13,13 @@ const navigationItems = [
 ];
 
 export default function Navbar() {
+  /* eslint-disable-next-line */
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const height = useTransform(scrollY, [0, 100], [60, 60]);
-  const opacity = useTransform(scrollY, [0, 100], [0.7, 0.9]);
+  // const opacity = useTransform(scrollY, [0, 100], [0.7, 0.9]);
   const width = useTransform(scrollY, [0, 100], [isMobile ? '90%' : '60%', isMobile ? '85%' : '50%']);
 
   useEffect(() => {

@@ -17,7 +17,7 @@ export default function ParallaxText({
   speed = 0.5, 
   className,
   style,
-  handwritten = false,
+  // handwritten = false,
   italic = false
 }: ParallaxTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
